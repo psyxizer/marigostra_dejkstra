@@ -4,3 +4,4 @@
 - алгоритм взят отсюда
 - https://skillbox.ru/media/code/algoritm-deykstry-chto-eto-takoe-kak-rabotaet-i-gde-ispolzuetsya/
 - весь код писал сам с нуля
+- Студент сетевой магистратуры МИИГАиК Иванов Илья Николаевич
