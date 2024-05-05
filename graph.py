@@ -126,17 +126,19 @@ class Graph:
         if self.v_list[v_idx].is_calc_path_infinity():
             self.v_list[v_idx].set_calc_path(0)
 
-        self.calc_recursive(v_idx)
+        self.calc_iterative(v_idx)
 
-    # рекурсивная функция перебора вершин по алгоритму
-    def calc_recursive(self, v_idx):
-        path_min_idx = self.calc_linked_path(v_idx)
-        self.watched_list.append(v_idx)
-        v_to = self.ret_other_v(v_idx, path_min_idx)
-        if v_to in self.watched_list:
-            return True
-        else:
-            self.calc_recursive(v_to)
+    # итеративная функция перебора вершин по алгоритму
+    def calc_iterative(self, v_idx):
+        while True:
+            path_min_idx = self.calc_linked_path(v_idx)
+            self.watched_list.append(v_idx)
+            v_to = self.ret_other_v(v_idx, path_min_idx)
+            if v_to in self.watched_list:
+                return True
+            else:
+                #self.calc_recursive(v_to)
+                v_idx = v_to
 
     # вернуть индекс вершины на другой стороне ребра
     def ret_other_v(self, cur_v, p_idx):
